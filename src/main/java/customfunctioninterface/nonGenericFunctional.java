@@ -1,4 +1,4 @@
-package FunctionalInterFaceCustom;
+package customfunctioninterface;
 
 @FunctionalInterface
 public interface nonGenericFunctional {

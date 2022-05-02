@@ -1,8 +1,6 @@
-package FunctionalInterFaceCustom;
+package customfunctioninterface;
 
-import java.io.PrintWriter;
 import java.time.LocalDate;
-import java.util.Date;
 
 public class App {
 
