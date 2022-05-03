@@ -1,17 +1,26 @@
 package customfunctioninterface.example;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 
+
+
+@ToString(callSuper = true)
 public class Movie extends Product{
 
     private String author;
     private String movieName;
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public String getMovieName() {
+        return movieName;
+    }
+
 
 
     public Movie(Long id, BigDecimal price, String author, String movieName) {
