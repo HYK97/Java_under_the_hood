@@ -24,14 +24,14 @@ public class App {
         //String s4e = app.print.<String>genericMethodString("k", (j)-> j.toString());
 
         //익명함수 사용가능
-        String s4 = app.print.<String>genericMethodString("익명함수", new GenericMethodFunctional() {
+        String s4 = app.print.genericMethodString("익명함수", new GenericMethodFunctional() {
             @Override
             public <T> String start(T string) {
                 return string.toString();
             }
         });
         //메소드 참조 사용가능
-        String s5 = app.print.<String>genericMethodString("method 참조", String::valueOf);
+        String s5 = app.print.genericMethodString("method 참조", String::valueOf);
         Integer i = app.print.freePrinter("1","2","3",(a,b,c)-> Integer.valueOf(a)+Integer.valueOf(b)+Integer.valueOf(c));
 
         System.out.println("s1 = " + s1);
@@ -40,6 +40,7 @@ public class App {
         System.out.println("s4 = " + s4);
         System.out.println("s5 = " + s5);
         System.out.println("i = " + i);
+
     }
 
 }
