@@ -60,7 +60,7 @@ public class Parallel {
         /**
          * single core
          * */
-        final long start2 = System.currentTimeMillis();
+        /*final long start2 = System.currentTimeMillis();
         Arrays.asList(1, 2, 3, 4)
                 .stream()
                 .map(i -> {
@@ -71,7 +71,7 @@ public class Parallel {
                     }
                     return i;
                 }).forEach(i -> System.out.println("i = " + i));
-        System.out.println(System.currentTimeMillis() - start2);
+        System.out.println(System.currentTimeMillis() - start2);*/
 
 
         /**
@@ -98,7 +98,7 @@ public class Parallel {
          * 즉 System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism","3")으로하면
          * 4개코어가 사용된다는 뜻
          * */
-        //System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism","2");
+        System.setProperty("java.util.concurrent.ForkJoinPool.common.parallelism","2");
         final long start4 = System.currentTimeMillis();
         Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8)
                 .parallelStream()
