@@ -7,7 +7,6 @@ import java.util.Comparator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static com.sun.deploy.uitoolkit.impl.awt.AWTClientPrintHelper.print;
 
 public class ManageHeight {
     int[][] gradeHeights;
