@@ -17,6 +17,22 @@ public class Student {
         this.email = email;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -25,5 +41,45 @@ public class Student {
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 '}';
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj==this) return true;
+        if(obj==null) return false;
+
+        if(obj.getClass() != getClass()) return false;
+        Student casting = (Student) obj;
+
+        if (name == null) {
+            if (casting.getName()!=null) return false;
+        } else if (!name.equals(casting.name)) {
+            return false;
+        }
+
+
+        if (phone == null) {
+            if (casting.getPhone()!=null) return false;
+        } else if (!phone.equals(casting.phone)) {
+            return false;
+        }
+
+        if (address == null) {
+            if (casting.getAddress()!=null) return false;
+        } else if (!address.equals(casting.address)) {
+            return false;
+        }
+
+        if (email == null) {
+            if (casting.getEmail()!=null) return false;
+        } else if (!email.equals(casting.email)) {
+            return false;
+
+        }
+
+
+
+        return true;
     }
 }

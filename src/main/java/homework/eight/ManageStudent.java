@@ -6,6 +6,8 @@ public class ManageStudent {
         Student[] students = addStudent();
         printStudents(students);
 
+        checkEquals();
+
     }
 
     public static void printStudents(Student[] students) {
@@ -20,5 +22,16 @@ public class ManageStudent {
         students[1]= new Student("Min");
         students[2]= new Student("Sook","Seoul","01011222233","asdasd@gmail.com");
         return students;
+    }
+
+    public static void checkEquals() {
+        Student a =new Student("Sook","Seoul","01011222233","asdasd@gmail.com");
+        Student b =new Student("Sook","Seoul","01011222233","asdasd@gmail.com");
+        if (a.equals(b)) {
+            System.out.println("Equal");
+        } else {
+            System.out.println("Not Equal");
+
+        }
     }
 }
