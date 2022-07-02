@@ -52,6 +52,8 @@ public class MapTest {
         System.out.println();
         writeMyProperties();
         readMyProperties();
+
+        mapEqualTest();
     }
 
     public static void writeMyProperties() throws IOException {
@@ -74,5 +76,24 @@ public class MapTest {
         for (Map.Entry<Object, Object> entry : entries) {
             System.out.println(entry.getKey() + "  : " + entry.getValue());
         }
+    }
+
+
+    /**
+     * Map equal test.
+     * map 내부의 key 와 value가 같다면 같은 객체로 확인
+     */
+    public static void mapEqualTest() {
+
+        Map<Character, Integer> map = new HashMap<>();
+        map.put('A', 1);
+        map.put('B', 2);
+        map.put('C', 3);
+        Map<Character, Integer> map2 = new HashMap<>();
+        map2.put('C', 3);
+        map2.put('B', 2);
+        map2.put('A', 1);
+
+        System.out.println("map2.equals(map) = " + map2.equals(map));
     }
 }
