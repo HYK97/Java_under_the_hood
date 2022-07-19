@@ -11,7 +11,17 @@ public class CollectionTest {
 
         toArray();
         remove();
+        toArray0();
 
+    }
+
+    private static void toArray0() {
+        System.out.println(" ===================================toArray0");
+        List<Integer> list = listInit();
+        Integer[] integers = list.toArray(new Integer[0]);
+        for (Integer integer : integers) {
+            System.out.println("data = " + integer);
+        }
     }
 
     private static List<Integer> listInit() {
@@ -32,7 +42,7 @@ public class CollectionTest {
     }
 
     public static void remove() {
-        System.out.println(" ===================================clear");
+
         List<Integer> list = listInit();
         list.clear();
         for (Integer data : list) {
