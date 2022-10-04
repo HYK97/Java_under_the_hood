@@ -7,7 +7,7 @@ public class Run {
     }
 
     void run() throws InterruptedException {
-        PrintString print = new PrintString();
+        final PrintString print = new PrintString();
         Target t1 = new Target(print);
         Target t2 = new Target(print);
         System.out.println("t1 state = " + t1.getState());
@@ -20,7 +20,7 @@ public class Run {
 
         Thread.sleep(1000);
         synchronized (print) {
-            print.notify();
+            print.notifyAll();
         }
 
         Thread.sleep(1000);
