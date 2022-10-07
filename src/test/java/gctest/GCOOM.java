@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import static javassist.ClassPool.getDefault;
@@ -20,15 +21,16 @@ public class GCOOM {
     void gcHeapOverFlow() {
         System.setProperty("-Xmx64m ", "-Xmx64m ");
         assertThrows(OutOfMemoryError.class, () -> {
-            List<Integer> list = new ArrayList<>();
-            while (true) {
-                IntStream.range(1, 1000).forEach(i -> {
-                    System.out.println("i = " + i);
-                    list.add(i);
-                });
+            List<Integer> li = IntStream.range(1, 100).boxed().collect(Collectors.toList());
+            for (int i = 1; true; i++) {
+                if (i % 50 == 0) {
+                    Thread.sleep(200);
+                }
+                IntStream.range(0, 100).forEach(li::add);
             }
         });
     }
+
 
     // vm option -ea -Xmx256m -verbose:gc
     @Test
