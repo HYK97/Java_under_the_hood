@@ -9,16 +9,11 @@ public class CommonCalculate {
         amount = 0;
     }
 
-    /**
-     * 메소드 synchronized
-     */
     public synchronized void plus(int value) {
         amount += value;
     }
 
-    /**
-     * statements synchronized  -> 성능측면에서 더유리함 꼭 필요한 부분만 동시접근이안되도록 변경
-     */
+
     public void minus(int value) {
         synchronized (lock) {
 

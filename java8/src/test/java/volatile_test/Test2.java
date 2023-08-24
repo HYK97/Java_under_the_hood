@@ -3,8 +3,8 @@ package volatile_test;
 import org.junit.jupiter.api.Test;
 
 
-public class AtomicTest {
-    volatile static long value;
+public class Test2 {
+    static long value;
 
     private void add() {
         for (long i = 0; i < 1000000000L; i++) {
@@ -14,7 +14,7 @@ public class AtomicTest {
     }
 
     @Test
-    void name() throws InterruptedException {
+    void start() throws InterruptedException {
         Thread a = new Thread(this::add, "a");
         Thread b = new Thread(this::add, "b");
         Thread c = new Thread(this::add, "c");
