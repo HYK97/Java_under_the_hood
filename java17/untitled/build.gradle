@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id "me.champeau.jmh" version "0.7.1"
 }
 
 group = 'org.example'
@@ -10,9 +11,19 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.projectlombok:lombok:1.18.28'
+    implementation 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor'org.projectlombok:lombok:1.18.20'
+    testImplementation 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.openjdk.jmh:jmh-core:1.36'
+    implementation 'org.openjdk.jmh:jmh-generator-annprocess:1.36'
+    implementation 'commons-io:commons-io:2.7'
+    testImplementation 'org.openjdk.jmh:jmh-core:1.36'
+    testImplementation 'org.openjdk.jmh:jmh-generator-annprocess:1.36'
+    testImplementation 'commons-io:commons-io:2.7'
+
 }
 
 test {

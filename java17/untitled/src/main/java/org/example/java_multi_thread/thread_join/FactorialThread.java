@@ -4,11 +4,14 @@ import lombok.Getter;
 
 import java.math.BigInteger;
 
-@Getter
+
 public class FactorialThread extends Thread {
+    @Getter
     private long inputNumber;
+    @Getter
     private BigInteger result;
     private boolean isFinished = false;
+
 
     public FactorialThread(long inputNumber) {
         this.inputNumber = inputNumber;
@@ -31,5 +34,9 @@ public class FactorialThread extends Thread {
             tempResult = tempResult.multiply(new BigInteger(Long.toString(i)));
         }
         return tempResult;
+    }
+
+    public boolean isFinished() {
+        return isFinished;
     }
 }
